@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+VERSION = $(shell head -n1 debian/changelog | sed -e 's/.*(//;s/-.*).*//;s/\+/\-/')
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-static
+
+override_dh_installchangelogs:
+# install custom changelog
+	dh_installchangelogs doc/changelog.txt
+
+override_dh_makeshlibs:
+	dh_makeshlibs
+	dpkg-gensymbols -v$(VERSION) -Pdebian/libhx32 -plibhx32
+	dpkg-gensymbols -v$(VERSION) -Pdebian/libhx-dev -plibhx-dev
+
+override_dh_installdocs:
+	dh_installdocs -i -plibhx-doc --doc-main-package=libhx-doc
+	dh_installdocs -a -plibhx-dev
+	dh_installdocs -a -plibhx32

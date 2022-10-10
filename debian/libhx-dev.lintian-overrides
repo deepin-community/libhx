@@ -1,0 +1,4 @@
+# libHX_rtcheck is used to enable more internal checks dynamically
+libhx-dev: package-name-doesnt-match-sonames libHX-rtcheck
+libhx-dev: shared-library-lacks-version usr/lib/x86_64-linux-gnu/libHX_rtcheck.so libHX_rtcheck.so
+libhx-dev: shared-library-lacks-prerequisites usr/lib/x86_64-linux-gnu/libHX_rtcheck.so

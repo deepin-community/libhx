@@ -1,0 +1,1 @@
+#include "tc-rand.c"

@@ -1,0 +1,9 @@
+Document: libhx
+Title: libhx documentation
+Author: Jan Engelhardt <jengelh@gmx.de>
+Abstract: API documentation and tutorial for the libhx
+ library, providing queue, tree, I/O and utility functions.
+Section: Programming/C
+
+Format: PDF
+Files: /usr/share/doc/libhx-doc/libHX_Documentation.pdf.gz

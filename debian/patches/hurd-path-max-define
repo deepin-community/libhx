@@ -1,0 +1,21 @@
+Description: Add missing define of PATH_MAX for hurd.
+Forwarded: not-needed
+Last-Update: 2015-02-04
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: trunk/src/io.c
+===================================================================
+--- trunk.orig/src/io.c
++++ trunk/src/io.c
+@@ -31,6 +31,11 @@
+ #include <libHX/string.h>
+ #include "internal.h"
+ 
++#ifndef PATH_MAX
++#define PATH_MAX 4096 /* Hurd does not define PATH_MAX in limits.h */
++#endif
++
++
+ struct HXdir {
+ #if defined _WIN32
+ 	char *dname;

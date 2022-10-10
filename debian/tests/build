@@ -1,0 +1,45 @@
+#!/bin/sh
+# autopkgtest check: Build and run a program against libHX, to verify that the
+# headers are installed correctly
+# (C) 2013 Vibhav Pant
+# Author: Vibhav Pant <vibhavp@ubuntu.com>
+set -e
+
+WORKDIR=$(mktemp -d)
+trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+cd $WORKDIR
+cat <<EOF > libHX_test.c
+#include <libHX/deque.h>
+#include <libHX/init.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <stdio.h>
+
+int main(void)
+{
+	assert(HX_init() != 0);
+	struct HXdeque *list = HXdeque_init();
+	struct HXdeque_node *node;
+	int *ptr1 = malloc(sizeof(int)), *ptr2 = malloc(sizeof(int));
+
+	*ptr1 = 1;
+	*ptr2 = 2;
+	assert(HXdeque_push(list, ptr1) != NULL
+	       && HXdeque_push(list, ptr2) != NULL);
+
+	node = list->first;
+	assert(*(int *)node->ptr == 1);
+	node = node->next;
+	assert(*(int *)node->ptr == 2);
+	HXdeque_genocide(list);
+	HX_exit();
+
+	return 0;
+}
+EOF
+
+gcc -o libHX_test libHX_test.c -lHX -Wall -Werror
+echo "build: OK"
+[ -x libHX_test ]
+./libHX_test
+echo "run: OK"

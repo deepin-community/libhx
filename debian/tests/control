@@ -1,0 +1,2 @@
+Tests: build
+Depends: libhx-dev, build-essential

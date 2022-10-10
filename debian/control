@@ -1,0 +1,56 @@
+Source: libhx
+Priority: optional
+Maintainer: Jörg Frings-Fürst <debian@jff.email>
+Build-Depends:
+ debhelper-compat (= 13)
+Standards-Version: 4.5.0
+Section: libs
+Rules-Requires-Root: no
+Homepage: https://inai.de/projects/libhx/
+Vcs-Git: git://jff.email/opt/git/libhx.git
+Vcs-Browser: https://jff.email/cgit/libhx.git
+
+Package: libhx32
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: C library providing queue, tree, I/O and utility functions
+ a C library (with some C++ bindings available) that provides data
+ structures and functions commonly needed, such as maps, deques, linked lists,
+ string formatting and autoresizing, option and config file parsing, type
+ checking casts and more.
+ .
+ This package contains the shared libraries.
+
+Package: libhx-dev
+Section: libdevel
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ libhx32 (= ${binary:Version}),
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: Development files for libhx
+ a C library (with some C++ bindings available) that provides data
+ structures and functions commonly needed, such as maps, deques, linked lists,
+ string formatting and autoresizing, option and config file parsing, type
+ checking casts and more.
+ .
+ This package contains the development libraries, header files needed by
+ programs that want to compile with libHX.
+
+Package: libhx-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: libhx-dev
+Description: Documentation files for libhx
+ a C library (with some C++ bindings available) that provides data
+ structures and functions commonly needed, such as maps, deques, linked lists,
+ string formatting and autoresizing, option and config file parsing, type
+ checking casts and more.
+ .
+ This package contains the development documentation.

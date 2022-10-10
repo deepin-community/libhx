@@ -1,0 +1,404 @@
+libhx (3.25-2) unstable; urgency=medium
+
+  * debian/control:
+    - Remove Replace / Breaks from libhx32.
+      Thanks to Sebastian Ramacher <sramacher@debian.org>
+  * Upload into unstable.
+
+ -- Jörg Frings-Fürst <debian@jff.email>  Wed, 07 Oct 2020 16:23:21 +0200
+
+libhx (3.25-1~exp1) experimental; urgency=medium
+
+  * New upstream release.
+  * Migrate to debhelper 13:
+    - Bump minimum debhelper-compat version in debian/control to = 13.
+  * Declare compliance with Debian Policy 4.5.0 (No changes needed).
+  * Bump package name depending on the SONAME to libhx32.
+  * debian/copyright:
+    - Refresh years.
+    - Add Upstream-Contact.
+    - Replace Homepage.
+    - Fix lintian *-globbing-patterns errors.
+  * debian/control:
+    - Change homepage.
+    - Add Replaces / Breaks.
+    - Add Rules-Requires-Root: no.
+  * Refresh patch.
+  * debian/libhx-dev.lintian-overrides:
+    - Rename tags.
+
+ -- Jörg Frings-Fürst <debian@jff.email>  Sun, 30 Aug 2020 21:56:37 +0200
+
+libhx (3.24-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Jörg Frings-Fürst <debian@jff.email>  Sun, 18 Nov 2018 14:06:24 +0100
+
+libhx (3.23-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Change to my new email address.
+  * Migrate to debhelper 11:
+    - Change debian/compat to 11.
+    - debian/control:
+      + Bump minimum debhelper version  to >= 11.
+      + Remove build depends dh-autoreconf.
+   - Remove --with autoreconf from debian/rules.
+  * New README.source to explain the branching model used.
+  * Declare compliance with Debian Policy 4.2.1 (No changes needed).
+  * Remove now useless debian/libhx-dev.postinst.
+  * debian/control:
+    - Change VCS-* to point to the new repository.
+    - Change Priority extra to optional.
+    - Remove not longer necessary XS-Testsuite field.
+  * debian/copyright:
+    - Use secure URI for copyright format.
+    - Refresh years for debian/*.
+  * debian/rules:
+    - Add override_dh_installdocs to correct installation into the
+      right directory.
+
+ -- Jörg Frings-Fürst <debian@jff.email>  Thu, 06 Sep 2018 19:41:31 +0200
+
+libhx (3.22-1) unstable; urgency=medium
+
+  * New maintainer (Closes: #774994).
+  * New upstream release.
+  * debian/patches/hurd-path-max-define:
+    - Refresh for new upstream release.
+    - Add missing DEP-3 header.
+  * debian/control:
+    - Add myself as maintainer.
+    - Bump Standards-Version to 3.9.6 (no changes required).
+    - Remove hardening-wrapper from Build-Depends.
+    - Add Vcs-*.
+  * debian/rules:
+    - Remove override_dh_builddeb because xz compression is standard now.
+    - Add dpkg-gensymbols to build symbols files.
+    - Change hardening to +all.
+  * debian/copyright:
+    - Rewrite to a DEP-5 machine-readable file.
+  * New debian/libhx-doc.doc-base.
+
+ -- Jörg Frings-Fürst <debian@jff-webhosting.net>  Wed, 08 Apr 2015 16:48:00 +0200
+
+libhx (3.21-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use dh-autoreconf to fix FTBFS on ppc64el (Closes: #749054).
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 08 Jul 2014 08:06:14 +0200
+
+libhx (3.19-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Wed, 05 Mar 2014 22:20:16 +0100
+
+libhx (3.18-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 06 Jan 2014 10:04:56 +0100
+
+libhx (3.17-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 24 Dec 2013 09:01:32 +0100
+
+libhx (3.15-2) unstable; urgency=low
+
+  * Add simple autopkgtest. Patch by Vibhav Pant (Closes: #705910).
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 22 Apr 2013 18:57:37 +0200
+
+libhx (3.15-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 11 Mar 2013 09:08:17 +0100
+
+libhx (3.14.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Fri, 11 Jan 2013 19:59:10 +0100
+
+libhx (3.14-2) unstable; urgency=low
+
+  * Set binary package libhx28 as Multi-Arch: same (Closes: #696003).
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sat, 15 Dec 2012 19:34:03 +0100
+
+libhx (3.14-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use debhelper compatibility level 9, adding multiarch support.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Thu, 15 Nov 2012 12:46:15 +0100
+
+libhx (3.13-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Thu, 09 Aug 2012 11:37:20 +0200
+
+libhx (3.12.1-1) unstable; urgency=low
+
+  * New upstream version.
+  * Rename binary package libhx27 to libhx28 due
+    to SONAME version bump from 27 to 28.
+  * Update copyright years in debian/copyright.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sun, 18 Dec 2011 08:40:39 +0100
+
+libhx (3.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove Vcs-Git entry since it does not contain a debian/ directory.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sat, 10 Sep 2011 08:13:40 +0200
+
+libhx (3.10.1-3) unstable; urgency=low
+
+  * Use hardening-wrapper for security flags.
+  * Update standards version to 3.9.2 (no changes required).
+  * Do not start package description line with an article.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sun, 01 May 2011 08:35:37 +0200
+
+libhx (3.10.1-2) unstable; urgency=low
+
+  * Remove *.la files from -dev package (Closes: #621668).
+  * Add patch hurd-path-max-define to fix FTBFS on hurd-i386.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Fri, 08 Apr 2011 08:57:21 +0200
+
+libhx (3.10.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Rename binary package libhx25 to libhx27 due
+    to SONAME version bump from 25 to 27.
+  * Update package description (Closes: #621033).
+  * Replace cdbs build system with dh.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Thu, 07 Apr 2011 06:39:32 +0200
+
+libhx (3.9.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 08 Feb 2011 18:12:41 +0100
+
+libhx (3.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * Change architecture of binary packae libhx-doc to "all" since
+    those files are all architecture-independent.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sun, 16 Jan 2011 02:19:09 -0600
+
+libhx (3.8-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Thu, 02 Dec 2010 19:41:00 +0100
+
+libhx (3.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 30 Aug 2010 19:57:47 +0200
+
+libhx (3.5-2) unstable; urgency=high
+
+  * Fixed debian/watch regex.
+  * Add fix for CVE-2010-2947 (Closes: #594393).
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 10 Aug 2010 21:10:19 +0200
+
+libhx (3.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update standards version to 3.9.1.
+  * Rename binary package libhx22 to libhx25 due
+    to SONAME version bump from 22 to 25.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Wed, 04 Aug 2010 00:51:31 +0200
+
+libhx (3.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Thu, 15 Apr 2010 00:02:38 +0200
+
+libhx (3.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update standards version to 3.8.4.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Thu, 04 Mar 2010 22:26:36 +0100
+
+libhx (3.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Switch to 3.0 (quilt) source format.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 27 Oct 2009 00:21:53 +0100
+
+libhx (3.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Wed, 23 Sep 2009 07:31:22 +0200
+
+libhx (3.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Wed, 09 Sep 2009 09:24:09 +0200
+
+libhx (3.0-0calvin1) unstable; urgency=low
+
+  * New upstream release.
+  * Update Homepage and Vcs-* fields in debian/control.
+  * Update standards version to 3.8.3.
+  * Rename binary package libhx18 to libhx22 due
+    to SONAME version bump from 18 to 22.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sat, 29 Aug 2009 07:24:04 +0200
+
+libhx (2.9-3) unstable; urgency=low
+
+  * Update watch URL in debian/watch (Closes: #540532).
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 10 Aug 2009 09:20:17 +0200
+
+libhx (2.9-2) unstable; urgency=low
+
+  * Remove 'A' from description (Closes: #502082).
+  * Add -doc package.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 27 Jul 2009 20:46:17 +0200
+
+libhx (2.9-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 27 Jul 2009 19:54:47 +0200
+
+libhx (2.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 16 Feb 2009 08:38:27 +0100
+
+libhx (2.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sat, 17 Jan 2009 15:32:11 +0100
+
+libhx (2.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Rename binary package libhx17 to libhx18 due
+    to SONAME version bump from 17 to 18.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Fri, 02 Jan 2009 17:50:43 +0100
+
+libhx (2.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Rename binary package libhx14 to libhx17 due
+    to SONAME version bump from 14 to 17.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sun, 28 Dec 2008 10:22:03 +0100
+
+libhx (1.28-1) unstable; urgency=low
+
+  * New upstream version
+  * Updated debian/watch file
+
+ -- Bastian Kleineidam <calvin@debian.org>  Thu, 27 Nov 2008 02:23:34 +0100
+
+libhx (1.25-1) unstable; urgency=low
+
+  * New upstream release.
+  * Rename binary package libhx13 to libhx14 due
+    to SONAME version bump from 13 to 14.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sun, 28 Sep 2008 19:42:23 +0200
+
+libhx (1.18-2) unstable; urgency=low
+
+  * Add Homepage: and Vcs-Git: fields to debian/control.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Wed, 11 Jun 2008 19:56:41 +0200
+
+libhx (1.18-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use debhelper 7.
+  * Update standards version to 3.8.0.
+  * Rename binary package libhx10 to libhx13 due
+    to SONAME version bump from 10 to 13.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 10 Jun 2008 20:26:22 +0200
+
+libhx (1.17-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Mon, 19 May 2008 00:49:52 +0200
+
+libhx (1.15-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Sun, 06 Apr 2008 16:27:28 +0200
+
+libhx (1.10.2-3) unstable; urgency=low
+
+  * Use debhelper 6.
+  * Added debian/watch file.
+  * Use security flags for gcc invocations:
+    -fstack-protector -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 29 Jan 2008 23:23:39 +0100
+
+libhx (1.10.2-2) unstable; urgency=low
+
+  * Install pkgconfig file.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Fri, 07 Dec 2007 02:23:49 +0100
+
+libhx (1.10.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update standards version to 3.7.3 (no changes required).
+  * Fix lintian warning copyright-contains-dh_make-todo-boilerplate.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Fri, 07 Dec 2007 01:46:57 +0100
+
+libhx (1.10.1-2) unstable; urgency=low
+
+  * Install upstream changelog.
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 18 Sep 2007 13:41:52 +0200
+
+libhx (1.10.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix copy-paste error in description: s/Cairo/libhx/.
+    Thanks Josh Triplett for the note (Closes: #441777).
+
+ -- Bastian Kleineidam <calvin@debian.org>  Tue, 18 Sep 2007 13:00:08 +0200
+
+libhx (1.10.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #440975).
+
+ -- Bastian Kleineidam <calvin@debian.org>  Thu, 05 Jul 2007 13:13:21 +0200
