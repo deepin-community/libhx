@@ -1,5 +1,5 @@
 doc/assorted.txt
-doc/libHX_Documentation.pdf
+#doc/libHX_Documentation.pdf
 doc/dirstamp.txt
 doc/ux-file.txt
 doc/ux-mmap.txt
