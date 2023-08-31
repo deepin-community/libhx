@@ -1,3 +1,9 @@
+libhx (3.25-deepin1) unstable; urgency=medium
+
+  * add lyx build deps for docs build
+
+ -- Deepin Packages Builder <packages@deepin.org>  Tue, 02 Jan 2023 13:37:39 +0800
+
 libhx (3.25-2) unstable; urgency=medium
 
   * debian/control:
